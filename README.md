@@ -5,7 +5,7 @@
 <a href="https://www.npmjs.com/package/node-efficientnet"><img src="https://img.shields.io/npm/l/node-efficientnet.svg" alt="License"></a>  
 <a href="https://npmcharts.com/compare/node-efficientnet?minimal=true"><img src="https://img.shields.io/npm/dm/node-efficientnet.svg" alt="Downloads"></a>
 <a href="https://npmcharts.com/compare/node-efficientnet?minimal=true"><img src="https://img.shields.io/npm/dt/node-efficientnet.svg" alt="Downloads"></a>
-
+[![Gitter](https://badges.gitter.im/node-efficientnet/community.svg)](https://gitter.im/node-efficientnet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 #
 [![NPM](https://nodei.co/npm/node-efficientnet.png?downloads=true)](https://www.npmjs.com/package/node-efficientnet)  
 
@@ -24,7 +24,10 @@ The codebase is heavily inspired by the [TensorFlow implementation](https://gith
 
 
 ## 👏 Supporters
+### &#8627; Stargazers
 [![Stargazers repo roster for @ntedgi/node-efficientnet](https://reporoster.com/stars/ntedgi/node-efficientnet)](https://github.com/ntedgi/node-efficientnet/stargazers)
+### &#8627; Forkers
+[![Forkers repo roster for @ntedgi/node-efficientnet](https://reporoster.com/forks/ntedgi/node-efficientnet)](https://github.com/ntedgi/node-efficientnet/network/members)
 
 
 ![Alt Text](https://raw.githubusercontent.com/ntedgi/node-efficientnet/main/misc/sample.gif)
@@ -164,7 +167,9 @@ const model = await EfficientNetCheckPointFactory.create(EfficientNetCheckPoint.
 
 const path2image = "..."
 
-const result = await model.inference(path2image)
+const topResults = 5
+
+const result = await model.inference(path2image,topResults)
 
 ```
 
@@ -226,7 +231,7 @@ output :
     label: 'giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca',
     precision: 83.60747593436018
   },
-  { label: 'skunk, polecat, wood pussy', precision: 11.61300759424677 },
+  { label: 'skunk, poleca', precision: 11.61300759424677 },
   {
     label: 'hog, pig, grunter, squealer, Sus scrofa',
     precision: 4.779516471393051
@@ -276,4 +281,5 @@ The performance of each model variant using the pre-trained weights converted fr
 | EfficientNetB7 | 0.844  |0.869|
 
 **\*** - topK accuracy score for converted models (imagenet `val` set)
+
 
